@@ -1,0 +1,60 @@
+<div class="border border-dark border-2 rounded bg-warning bg-opacity-10 col-6 m-3">
+    <form (ngSubmit)="onSubmit()">
+        <h1 class = "text text-center">Language</h1>
+    <div class="form-check m-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" value = "JavaScript"  [(ngModel)] = "selectedradio" >
+        <label class="form-check-label" for="flexRadioDefault1">JavaScript</label>
+      </div>
+    <div class="form-check m-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" value = "Java" [(ngModel)] = "selectedradio" >
+        <label class="form-check-label" for="flexRadioDefault2">Java</label>
+    </div>
+    <div class="form-check m-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" value = "Php" [(ngModel)] = "selectedradio" >
+        <label class="form-check-label" for="flexRadioDefault2">Php</label>
+    </div>
+    <div class="form-check m-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault"  value = "Python" [(ngModel)] = "selectedradio" >
+        <label class="form-check-label" for="flexRadioDefault2">Python</label>
+    </div>
+    <div class="form-check m-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" value = "Android" [(ngModel)] = "selectedradio" >
+        <label class="form-check-label" for="flexRadioDefault2">Android</label>
+    </div>
+    <div class="form-check m-2">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" value = "C#" [(ngModel)] = "selectedradio" >
+        <label class="form-check-label" for="flexRadioDefault2">C#</label>
+    </div>
+    <button type = "submit" class=" btn btn-primary m-3">Click</button>
+
+
+
+    <!-- <div class="form-check">
+        <input class="form-check-input" type="checkbox" name = "language" value = "Javascript" [checked]="isChecked">
+       JavaScript
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox"  name = "language" value = "java" [checked]="isChecked" >
+       Java
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="flexRadioDefault" value = "Php" [checked]="isChecked" >
+        Php
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="flexRadioDefault"  value = "Python" [checked]="isChecked" >
+       Python
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="flexRadioDefault" value = "Android" [checked]="isChecked">
+       Android
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="flexRadioDefault" value = "C#" [checked]="isChecked">
+       C#
+    </div>
+      <button type = "submit" class=" btn btn-primary">Click</button> -->
+  </form>
+  </div>
+
+

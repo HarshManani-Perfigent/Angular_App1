@@ -1,0 +1,29 @@
+
+<div class="row">
+<h1>Employees Cards</h1>
+<div class="card border border-dark border-2 rounded bg-warning bg-opacity-10 col-sm-6 m-3" style="width: 18rem;" *ngFor="let e of EmployeesList">
+  <div *ngIf="e.isEmployee else isnotemp">
+    <img class="card-img-top" src={{e.Photograph}}>
+    <div class="card-body">
+      <h5 class="card-title">{{e.isEmployee? 'employee' : 'not employee'}}</h5>
+      <!-- <h5 class="card-title" *ngIf="e.isEmployee">Employee</h5>
+      <h5 class="card-title" *ngIf="!e.isEmployee">Not Employee</h5> -->
+      <p class="card-text">EmpId:{{e.EmpId}} </p>
+      <p class="card-text"> EmpName: {{e.EmpName | uppercase}}</p>
+      <p class="card-text"> Salary: {{e.Salary | currency : 'INR' : 'symbol' : '1.2-2'}}</p>
+      <p class="card-text"> Designation: {{e.Designation}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <hr>
+  </div>
+  <ng-template #isnotemp >
+    hello..
+  </ng-template>
+
+</div>
+<div>
+  <ng-template>
+    hello123.....
+  </ng-template>
+</div>
+</div>

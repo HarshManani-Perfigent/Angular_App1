@@ -1,0 +1,56 @@
+<div class=" border border-dark border-2 rounded  bg-warning bg-opacity-10 col-8 m-3">
+    <h1 class="text text-center"> Book List Using Kendo UI</h1>
+    <div class="col-sm-12 p-4" >
+      <kendo-grid [kendoGridBinding]="gridView"
+                  [pageSize]="10"
+                  [pageable]="true"
+                  [groupable]="true"
+                  [height]="550"
+                  [sortable]="true"
+                  [filterable]="true"
+                  kendoGridSelectBy="id"
+                  [(selectedKeys)]="mySelection">
+
+            <ng-template kendoGridToolbarTemplate>
+                <input
+                  [style.width.px]="200"
+                  placeholder="Global search"
+                  kendoTextBox
+                  (input)="onFilter($event)"/>
+                <kendo-grid-spacer></kendo-grid-spacer>
+
+                <button kendoGridExcelCommand  [svgIcon]="excelSVG" themeColor="success">Export to Excel</button>
+                <button kendoGridPDFCommand [svgIcon]="pdfSVG" themeColor="error">Export to PDF</button>
+                <button kendoGridPDFCommand [svgIcon]="csvSVG" (click)="exportCSV()" themeColor="info">Export to CSV</button>
+
+            </ng-template>
+
+        <kendo-grid-checkbox-column
+              [width]="45"
+              [headerClass]="{ 'text-center': true }"
+              [class]="{ 'text-center': true }"
+              [resizable]="false"
+              [columnMenu]="false"
+              [showSelectAll]="true">
+        </kendo-grid-checkbox-column>
+
+        <kendo-grid-column-group >
+          <kendo-grid-column field="id" title="Id" [width]="200" ></kendo-grid-column>
+          <kendo-grid-column field="title" title="Title" [width]="200" >
+            <ng-template kendoGridCellTemplate let-books >
+              <div>{{ books.title }}</div>
+              <div>{{ books.rate }}</div>
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column field="rate" title="Rate" [width]="200" ></kendo-grid-column>
+        </kendo-grid-column-group>
+
+        <kendo-grid-pdf
+          fileName="Booklist.pdf"
+          [repeatHeaders]="true">
+        </kendo-grid-pdf>
+        <kendo-grid-excel fileName="Booklist.xlsx"></kendo-grid-excel>
+
+      </kendo-grid>
+    </div>
+</div>

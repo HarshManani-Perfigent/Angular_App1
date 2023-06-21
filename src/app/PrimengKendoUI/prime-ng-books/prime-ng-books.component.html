@@ -1,0 +1,76 @@
+<div class="border border-dark border-2 rounded  bg-warning bg-opacity-10 col-9 m-3">
+    <h1 class="text text-center"> Book List Using Prime Ng</h1>
+    <div class="col-sm-10 p-2">
+    <p-table #myTable
+            [value]="bookList"
+            [tableStyle]="{ 'min-width': '50rem' }" [(selection)]="selectedBooks"
+            [globalFilterFields]="['id', 'title', 'rate']" [paginator]="true"
+            [rows]="5" [showCurrentPageReport]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            selectionMode="multiple"
+            >
+
+      <ng-template pTemplate="caption">
+        <div style="text-align: left">
+          <div class="m-2">
+          <button type="button" pButton pRipple icon="pi pi-file"  (click)="exportCSV()"class="mr-2" pTooltip="CSV" tooltipPosition="bottom"></button> &nbsp;
+          <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"class="p-button-success mr-2" pTooltip="XLS" tooltipPosition="bottom"></button>&nbsp;&nbsp;
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText size="50"  placeholder="Global Filter"  (input)="myTable.filterGlobal($any($event.target).value , 'contains')"style="width:auto" />
+            </span>
+          </div>
+        </div>
+    </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th style="width: 4rem">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+              </th>
+            <th >Id
+              <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input type="text" pInputText (input)="myTable.filter($any($event.target).value,'id','startsWith')"/>
+              <p-sortIcon field="id" pSortableColumn="id"></p-sortIcon>
+              </span>
+
+            </th>
+            <th >Title
+              <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input type="text" pInputText (input)="myTable.filter($any($event.target).value,'title','startsWith')"/>
+              <p-sortIcon field="title" pSortableColumn="title"></p-sortIcon>
+              </span>
+            </th>
+            <th >Rate
+              <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input type="text" pInputText (input)="myTable.filter($any($event.target).value,'rate','startsWith')"/>
+              <p-sortIcon field="rate" pSortableColumn="rate" ></p-sortIcon>
+              </span>
+            </th>
+            <!-- <th>Action</th> -->
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-books >
+            <tr>
+              <td>
+                <p-tableCheckbox [value]="books"></p-tableCheckbox>
+              </td>
+                <td>{{ books.id }}</td>
+                <td>{{ books.title}}</td>
+                <td>{{ books.rate}}</td>
+                <!-- <td><p-button label="Delete" styleClass="p-button-rounded p-button-danger p-button-sm"></p-button></td> -->
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+          <p-button type="button"  styleClass="p-button-text"></p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+          <p-button type="button" styleClass="p-button-text"></p-button>
+      </ng-template>
+    </p-table>
+</div>
+</div>
+
+

@@ -1,0 +1,18 @@
+<div class=" border border-dark border-2 rounded bg-warning bg-opacity-10 col-6 m-3">
+    <h1 class = "text text-center">Switch Case</h1>
+    <div class="col-6 p-4 ">
+        <select class="form-select" aria-label="Default select example" (change)="getValue($event)">
+            <option value = "Java">Java</option>
+            <option value = "Javascript">Javascript</option>
+            <option value = "Php">Php</option>
+            <option value = "Python">Python</option>
+        </select>
+  </div>
+
+  <div class="col-md-12" [ngSwitch]="selectLanguage">
+    <h2 *ngSwitchCase="'Java'">Java</h2>
+    <h2 *ngSwitchCase="'Javascript'">JavaScript</h2>
+    <h2 *ngSwitchCase="'Php'">Php</h2>
+    <h2 *ngSwitchCase="'Python'">Python</h2>
+  </div>
+  </div>

@@ -1,0 +1,29 @@
+<div class="col-sm-4 p-4" >
+    <h1>Employees List</h1>
+    <div>
+  <table class="table table-bordered">
+    <thead>
+        <tr class="table-primary">
+       <th>EmpId</th>
+       <th>EmpName</th>
+       <th>Salary</th>
+       <th>Designation</th>
+       <th>Photograph</th>
+       <th>Action</th>
+       </tr>
+    </thead>
+    <tbody class="table-secondary">
+      <tr *ngFor="let e of EmployeesList">
+        <td>{{e.EmpId}}</td>
+        <td>{{e.EmpName }}</td>
+        <td>{{e.Salary | currency : 'INR' : 'symbol' : '1.2-2'}}</td>
+        <td>{{e.Designation}}</td>
+        <td><img src = {{e.Photograph}} width="80px"></td>
+        <!-- <td><button [routerLink]="['/queryString']" [queryParams]="{empid : e.EmpId}" class="btn btn-primary">Show</button></td> -->
+        <td><button (click)="showData(e.EmpId)" class="btn btn-primary">Show</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+

@@ -1,0 +1,38 @@
+<div class=" border border-dark border-2 rounded  bg-warning bg-opacity-10 col-6 m-3">
+  <h1 class="text text-center"> Book List</h1>
+<div class="col-sm-8 p-4" >
+    <div class="d-flex ">
+      <div class="p-2 col-4"><button class ="btn btn-primary m-2" [routerLink]="['/setBook']" >Add Book</button></div>
+      <div class="p-2 col-4">
+      <input type="text" class="form-control m-2" placeholder="Filter by title" [(ngModel)]="filterText" style="width: 300px;">
+        <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+      </div>
+
+    </div>
+    <div>
+    <table class="table table-bordered table-sm">
+      <thead>
+          <tr class="table-primary ">
+         <th>Id</th>
+         <th (click)="sortBooks()">Title &nbsp; &nbsp;<i class="fa fa-sort" aria-hidden="true"></i></th>
+         <th>Rate</th>
+         <th>Action</th>
+         </tr>
+      </thead>
+      <tbody class="table-secondary">
+        <tr *ngFor="let b of bookList | filterPipe:filterText">
+          <td>{{b.id}}</td>
+          <td>{{b.title }}</td>
+          <td>{{b.rate | currency : 'INR' : 'symbol' : '1.2-2'}}</td>
+          <td class="col-6">
+            <button class="btn btn-primary"  [routerLink]="['/editBook',b.id]" >Edit</button>
+            <button class="btn btn-primary m-2" (click)="deleteBookId(b.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+
+

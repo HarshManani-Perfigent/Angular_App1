@@ -1,0 +1,20 @@
+<div class=" border border-dark border-2 rounded  bg-warning bg-opacity-10 col-6 m-3">
+    <h1 class="text text-center">Drop Down List</h1>
+<div class="col-6 p-4">
+    <select #selectValue class="form-select" aria-label="Default select example" [(ngModel)]="defaultvalue" >
+        <!-- <option>Select function</option>
+        <option value = "Map1">Map</option>
+        <option value = "Filter1">Filter</option>
+        <option value = "Find1">Find</option> -->
+        <option  *ngFor="let v of arrayValue" [value]="v.Name">{{v.Name}}</option>
+    </select>
+</div>
+
+<p>{{defaultvalue}}</p>
+
+<div class = "col-6 p-4"><input type="text" #textbox class="form-control" id="input1"  placeholder="Enter Salary" >
+<div class = "p-4"><input type="button" value="Click" class="btn btn-primary"
+    (click) ="getSelect(selectValue.value, textbox.value)">
+</div>
+</div>
+</div>

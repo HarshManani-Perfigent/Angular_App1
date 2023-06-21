@@ -1,0 +1,26 @@
+<div class=" border border-dark border-2 rounded  bg-warning bg-opacity-10 col-6 m-3">
+    <h1 class = "text text-center">Template Driven Forms</h1>
+    <div class="col-6 p-4">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <label for="input1" class="form-label">Id </label>
+      <input type="text" class="form-control" id="input1" placeholder="Enter Id " required  name = 'id' ngModel>
+
+      <label for="input2" class="form-label">Name </label>
+      <input type="text" class="form-control" id="input2" placeholder="Enter name" required name = 'name' ngModel>
+
+      <label for="input3" class="form-label">Rate </label>
+      <input type="text" class="form-control" id="input3" placeholder="Enter rate" required name = 'rate' ngModel>
+
+      <div class = "p-4"><input type="submit" value="Click"  class="btn btn-primary" ></div>
+      <div>
+        <!-- {{form.value | json}} -->
+        {{jsonObj | json}}
+      </div>
+      <div>
+        {{form.valid}}
+      </div>
+    </form>
+    </div>
+  </div>
+
+

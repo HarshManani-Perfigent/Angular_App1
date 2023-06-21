@@ -1,0 +1,23 @@
+<div id= "divcontainer" class=" border border-dark border-2 rounded bg-warning bg-opacity-10 col-6 m-3">
+    <h1 class = "text text-center">Tamplet ref variable</h1>
+    <div class="col-6 p-4">
+      <label for="input1" class="form-label" >Msg </label>
+      <!-- #box same as input id -->
+      <input #box type="text" class="form-control" id="input1"  placeholder="Enter any things">
+     <!-- <p>{{msg}}</p> -->
+      <div class = "p-4"><input type="button" value="Click" class="btn btn-primary" (click)="getData(box)"></div>
+
+      <p>First Name</p>
+      <input type="text" class="form-control" #firstNameInput>
+      <p>Last Name</p>
+      <input type="text" class="form-control" #lastNameInput>
+      <br><br>
+      <button class="btn btn-primary" (click)="show(firstNameInput,lastNameInput)">Show</button>
+      <hr>
+      <p>Full Name: {{ fullName }}</p>
+
+  </div>
+  </div>
+
+
+

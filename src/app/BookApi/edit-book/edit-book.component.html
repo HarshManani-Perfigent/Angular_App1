@@ -1,0 +1,21 @@
+<div class=" border border-dark border-2 rounded  bg-warning bg-opacity-10 col-6 m-3">
+    <h1 class = "text text-center">Edit Book</h1>
+    <div class="col-6 p-4">
+    <form #form="ngForm" name = "myForm" (ngSubmit)="form.valid && onSubmit(form)">
+      <label for="input2" class="form-label">Title </label>
+      <input #title="ngModel" type="text" class="form-control"  placeholder="Enter title" required name = 'title' [(ngModel)]="myform.title" [ngClass]="{'is-invalid' : form.submitted && title.errors}">
+
+      <div *ngIf="form.submitted && title.errors" class="invalid-feedback">Required filled</div>
+
+      <label for="input3" class="form-label">Rate </label>
+      <input #rate="ngModel" type="text" class="form-control" placeholder="Enter rate" required name = 'rate' [(ngModel)]="myform.rate" [ngClass]="{'is-invalid' : form.submitted && rate.errors}">
+
+      <div *ngIf="form.submitted && rate.errors" class="invalid-feedback">Required filled</div>
+
+      <div class = "p-4"><input type="submit" value="Save"  class="btn btn-primary m-2" >
+                        <input type="button" value="Cancel" [routerLink]="['/GetBooks']"  class="btn btn-primary" ></div>
+
+    </form>
+    </div>
+  </div>
+

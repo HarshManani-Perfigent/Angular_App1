@@ -1,0 +1,29 @@
+<div class="col-sm-4 p-4" > 
+  <div>
+    <h1>Employees List</h1>
+    <button class=" btn btn-primary m-2" [routerLink]="['/setBook']">Add Book</button>
+  </div>
+  <div>
+  <table class="table table-bordered">
+    <thead>
+        <tr class="table-primary">
+       <th>Id</th>
+       <th>Title</th>
+       <th>Rate</th>
+       <th>Action</th>
+       </tr>
+    </thead>
+    <tbody class="table-secondary">
+      <tr *ngFor="let b of bookList">
+        <td>{{b.id}}</td>
+        <td>{{b.title }}</td>
+        <td>{{b.rate | currency : 'INR' : 'symbol' : '1.2-2'}}</td>
+        <td class="col-4"><button class="btn btn-primary">Edit</button>
+                        <button class="btn btn-primary m-2">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+

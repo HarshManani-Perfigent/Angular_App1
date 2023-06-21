@@ -1,0 +1,7 @@
+<div class=" border border-dark border-2 rounded  bg-warning bg-opacity-10 col-6 m-3">
+    <h1 class = "text text-center">Ng Class</h1>
+    <div [ngClass]="'blue col-6 m-2 text-center border border-dark border-2 rounded'">Access Css</div>
+    <div [ngClass]="[bgColor ,pborder, setMargin]">Access Ts  </div>
+    <div [ngClass]="bgColor == 'blue' ? changeColor : bgColor"> Second paragraph</div>
+    <div><button [ngClass]="btnClass"  (click)="changeParagraphColor()">Click</button></div>
+</div>

@@ -1,0 +1,81 @@
+<!-- <h1> Interpolations binding</h1>
+<p>{{title}}</p>
+<p>{{Designation}}</p>
+
+<input class="btn btn-primary" type = "button" value = "Click" (click)="Simplefun()">
+
+
+<p>SId : {{S1.SId}} FirstName : {{S1.FirstName}} LastName : {{S1.LastName}}</p>
+
+<div class="col-sm-4">
+  <h1>Student Table</h1>
+  <table class="table table-bordered">
+    <thead>
+      <tr class="table-primary ">
+        <th>SId</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+      </tr>
+    </thead>
+    <tbody class="table-secondary">
+      <tr *ngFor="let s of StudentList" >
+        <td>{{s.SId}}</td>
+        <td>{{s.FirstName}}</td>
+        <td>{{s.LastName}}</td>
+      </tr>
+    </tbody>
+  </table><br>
+
+  <input type = "button" class="btn btn-primary"value = "Click to Change" (click)="ChangeStudentDetalis()">
+</div> -->
+
+
+<!-- <div class="d-flex flex-column mb-3">
+  <h1>Property binding</h1>
+  <div class = "p-2"><label>Id : </label><input type = "text" [disabled] = "true" [value] = "Id"></div>
+  <div class = "p-2"><label>Name : </label><input type = "text"  [disabled] = "hidden" bind-value = "Name"></div>
+  <div class = "p-2"><img [hidden]="hidden" [src] = "image"></div>
+  <div class = "p-2"><input type = "button" class="btn btn-primary" value = "Click to show name/img" (click)="Showtextbox()">
+  </div>
+  <div class = "p-2"><label>Pass msg : </label><input type = "text" (keydown)="getData($event)"></div>
+  <div class = "p-2"><p (mouseenter)="changevalue()" (mouseleave)="changevalue1()">Drag-in and out mouse </p></div>
+</div> -->
+
+<!-- <app-employees-detailes></app-employees-detailes>
+<app-employees-cards></app-employees-cards>
+<app-product-cards></app-product-cards> -->
+
+<!-- <app-two-way-binding></app-two-way-binding>
+<app-radio-button></app-radio-button>
+<app-tamplet-ref-variable></app-tamplet-ref-variable>
+<app-ng-switch></app-ng-switch>
+<app-drop-down-list></app-drop-down-list> -->
+
+<!-- <div class=" border border-dark border-2 rounded  bg-primary bg-opacity-10 col-6 m-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Admin Panel</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../app/admin/home/home.component.html" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../app/admin/user/user.component.html" routerLink="/user">User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../app/admin/post/post.component.html" routerLink="/post">Post</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div> -->
+
+<app-app-nav-bar></app-app-nav-bar>
+<router-outlet></router-outlet>
+<div class = " border border-dark border-2 rounded  bg-warning bg-opacity-10 col-9 m-3"><p>Footer</p></div>
+<!-- <app-ng-class-example></app-ng-class-example> -->
+<!-- <app-book-list></app-book-list> -->

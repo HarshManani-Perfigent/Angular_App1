@@ -1,0 +1,21 @@
+
+<div class=" border border-dark border-2 rounded  bg-warning bg-opacity-10 col-6 m-3">
+  <h1 class = "text text-center">Two way binding</h1>
+  <div class="col-6 p-4">
+    <label for="input1" class="form-label">FirstName </label>
+    <input type="text" class="form-control" id="input1" placeholder="Enter first name" [(ngModel)]='firstName'>
+
+    <label for="input2" class="form-label">MiddleName </label>
+    <input type="text" class="form-control" id="input2" placeholder="Enter middle name" [(ngModel)]='middleName'>
+
+    <label for="input3" class="form-label">LastName </label>
+    <input type="text" class="form-control" id="input3" placeholder="Enter last name" [(ngModel)]='lastName'>
+
+    <div class = "p-4"><input type="button" value="Click to show fullName" class="btn btn-primary" (click)="OnFullName()"></div>
+
+    FullName :<label for="input3" class="form-label">{{msg}}</label>
+
+
+  </div>
+</div>
+
