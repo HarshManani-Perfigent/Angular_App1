@@ -2,7 +2,7 @@
     <h1 class = "text text-center">Edit Book</h1>
     <div class="col-6 p-4">
     <form #form="ngForm" name = "myForm" (ngSubmit)="form.valid && onSubmit(form)">
-      <label for="input2" class="form-label">Title </label>
+      <label for="input2" class="form-label">Title 1</label>
       <input #title="ngModel" type="text" class="form-control"  placeholder="Enter title" required name = 'title' [(ngModel)]="myform.title" [ngClass]="{'is-invalid' : form.submitted && title.errors}">
 
       <div *ngIf="form.submitted && title.errors" class="invalid-feedback">Required filled</div>
